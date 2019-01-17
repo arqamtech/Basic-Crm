@@ -1,0 +1,22 @@
+<ion-content padding>
+  <ion-slides>
+    <ion-slide>
+
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="mail" autofocus></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="pass"></ion-input>
+      </ion-item> 
+
+      <button ion-button margin-top (click)="checkData()">Login</button>
+
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

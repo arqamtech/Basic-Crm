@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>New Client</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Client Name</ion-label>
+    <ion-input type="text" [(ngModel)]="cName" autofocus></ion-input>
+  </ion-item>
+
+
+
+  <ion-item>
+    <ion-label floating>Contact Person Name</ion-label>
+    <ion-input type="text" [(ngModel)]="contactName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Phone Number</ion-label>
+    <ion-input type="number" [(ngModel)]="cPhone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Phone Number 2</ion-label>
+    <ion-input type="number" [(ngModel)]="cPhone2"></ion-input>
+  </ion-item>
+
+
+  <button ion-button block margin-top (click)="checkData()">Add Client</button>
+
+
+</ion-content>
