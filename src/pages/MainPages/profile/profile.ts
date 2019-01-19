@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
+import { ChangePassPage } from '../../Auth/change-pass/change-pass';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @IonicPage()
@@ -16,13 +18,26 @@ export class ProfilePage {
     showBackdrop : true,	
   });
 
-
+  id = firebase.auth().currentUser.uid;
+  userName : string;
+  userMail : string;
   constructor(
   public navCtrl: NavController, 
   public loadingCtrl : LoadingController,
+  public db : AngularFireDatabase,
   public alertCtrl : AlertController,
   public navParams: NavParams
   ) {
+    this.getUser();
+  }
+
+  getUser() {
+    this.db.object(`Agents/${this.id}`).snapshotChanges().subscribe(snap => {
+      let temp  :any = snap.payload.val();
+      this.userName = temp.Name;
+      this.userMail = temp.Email;
+      
+    })
   }
 
 
@@ -56,5 +71,5 @@ export class ProfilePage {
         this.loading.dismiss();
       });
     }
-  
+    gtchangePass(){this.navCtrl.push(ChangePassPage);}  
 }

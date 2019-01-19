@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, Tabs } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { TabsPage } from '../tabs/tabs';
-import { LoginPage } from '../login/login';
+import { LoginPage } from '../../Auth/login/login';
 @IonicPage()
 @Component({
   selector: 'page-loader',

@@ -5,18 +5,52 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+
+  <ion-card *ngFor="let c of clients">
 
 
 
 
+    <ion-item>
+      <h3 item-start style="font-weight : 800;">{{c.ClientName}}</h3>
+      <a item-end href="tel:{{c.PhoneNumber}}">
+        <ion-icon large name="ios-call" color="primary" item-end></ion-icon>
+      </a>
+      <!-- <button item-end ion-button clear (click)="cDetails(c)">Details</button> -->
+    </ion-item>
 
+
+    <ion-item>
+      <p item-start>Contact Person</p>
+      <p item-end>{{c.ContactPerson}}</p>
+    </ion-item>
+
+
+    <!-- <ion-item>
+      <p item-start>Contact No.</p>
+    </ion-item> -->
+
+
+    <ion-item>
+      <p item-start>Status</p>
+      <p item-end>{{c.Status}}</p>
+    </ion-item>
+
+    <ion-item color="primary" (click)="cDetails(c)">
+      <p>Details</p>
+      <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+
+    </ion-item>
+
+  </ion-card>
 
 
 
 
   <ion-fab bottom right>
-    <button ion-fab (click)="gtAddClient()" >
+    <button ion-fab (click)="gtAddClient()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ClientDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ClientDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  client = this.navParams.get("client"); 
+
+
+  constructor(
+  public navCtrl: NavController, 
+  public navParams: NavParams
+  ) {
+    console.log(this.client);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientDetailsPage');
-  }
 
 }

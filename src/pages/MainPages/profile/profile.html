@@ -7,5 +7,21 @@
 
 <ion-content >
 
-  <button block color="danger" ion-button (click)="signOutConfirm()">Log Out</button>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>{{userName}}</ion-card-title>
+      <p>{{userMail}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-item no-lines (click)="gtchangePass()" >
+    <p item-start>Change Password</p>
+    <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+
+
+  <button block color="danger" margin-top ion-button (click)="signOutConfirm()">Log Out</button>
+
+
 </ion-content>

@@ -14,8 +14,8 @@ import * as firebase from 'firebase';
 export class AddClientPage {
 
   cName: string;
-  cPhone: number;
-  cPhone2: number;
+  cPhone: string;
+  cPhone2: string = null;
   contactName: string;
 
 

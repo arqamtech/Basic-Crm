@@ -13,10 +13,11 @@ import { ClientsPage } from '../pages/MainPages/clients/clients';
 import { DashboardPage } from '../pages/MainPages/dashboard/dashboard';
 import { ProfilePage } from '../pages/MainPages/profile/profile';
 import { TimelinePage } from '../pages/MainPages/timeline/timeline';
-import { LoginPage } from '../pages/Supp/login/login';
 import { AddClientPage } from '../pages/Clients/add-client/add-client';
 import { ClientDetailsPage } from '../pages/Clients/client-details/client-details';
 import { LoaderPage } from '../pages/Supp/loader/loader';
+import { LoginPage } from '../pages/Auth/login/login';
+import { ChangePassPage } from '../pages/Auth/change-pass/change-pass';
 
 export const firebaseCred = {
     apiKey: "AIzaSyDHUozntNt51l-8V3bUPAX9cQvTvm7sv0Y",
@@ -41,6 +42,7 @@ firebase.initializeApp(firebaseCred);
         AddClientPage,
         ClientDetailsPage,
         LoaderPage,
+        ChangePassPage,
     ],
     imports: [
         BrowserModule,
@@ -63,6 +65,7 @@ firebase.initializeApp(firebaseCred);
         AddClientPage,
         ClientDetailsPage,
         LoaderPage,
+        ChangePassPage,
     ],
     providers: [
         StatusBar,

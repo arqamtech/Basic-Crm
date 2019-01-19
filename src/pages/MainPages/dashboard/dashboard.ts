@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the DashboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DashboardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  id = firebase.auth().currentUser.uid;
+
+  totClients  :number =0;
+
+  constructor(
+  public navCtrl: NavController, 
+  public navParams: NavParams,
+  public db : AngularFireDatabase,
+  ) {
+    this.getClients();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DashboardPage');
+  getClients(){
+    this.db.list(`AgentsData/${this.id}/Clients`).snapshotChanges().subscribe(snap=>{
+      this.totClients =  snap.length;
+    })
   }
-
 }
