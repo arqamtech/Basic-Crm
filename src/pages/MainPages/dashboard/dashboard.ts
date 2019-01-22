@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
+import { LoaderPage } from '../../Supp/loader/loader';
 
 @IonicPage()
 @Component({
@@ -27,4 +28,5 @@ export class DashboardPage {
       this.totClients =  snap.length;
     })
   }
+
 }

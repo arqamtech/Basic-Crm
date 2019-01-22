@@ -1,3 +1,6 @@
 .content {
-    background-color: #F0F3F4;
+    background-color: #edf0f0;
   }
+  ion-input,ion-select{
+  border-bottom: 1px solid map-get($colors,priamary)
+}

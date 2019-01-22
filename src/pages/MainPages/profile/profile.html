@@ -1,27 +1,46 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>Profile</ion-title>
+    <ion-buttons end>
+      <button color="danger" (click)="signOutConfirm()" ion-button icon-only>
+        <ion-icon name="md-log-out"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content >
+<ion-content>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-card-title>{{userName}}</ion-card-title>
-      <p>{{userMail}}</p>
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+
+      </ion-col>
+      <ion-col col-8 class="content">
+        <ion-card-title>{{userName}}</ion-card-title>
+        <p>{{userMail}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
-  <ion-item no-lines (click)="gtchangePass()" >
+
+
+  <ion-item (click)="gtArchivedClients()">
+    <p item-start>Archived Clients</p>
+    <ion-icon name="ios-arrow-forward" item-end></ion-icon>
+  </ion-item>
+
+
+
+  <ion-item no-lines (click)="gtchangePass()">
     <p item-start>Change Password</p>
     <ion-icon name="ios-arrow-forward" item-end></ion-icon>
   </ion-item>
 
 
-  <button block color="danger" margin-top ion-button (click)="signOutConfirm()">Log Out</button>
+  <!-- <button block color="danger" margin-top ion-button (click)="signOutConfirm()">Log Out</button> -->
 
 
 </ion-content>

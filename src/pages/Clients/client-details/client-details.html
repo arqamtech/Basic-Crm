@@ -1,10 +1,102 @@
 <ion-header>
-  <ion-navbar color= "primary" >
+  <ion-navbar color="primary">
     <ion-title>{{client.ClientName}}</ion-title>
+    <ion-buttons end>
+      <button ion-button *ngIf="!client.Archived" icon-only (click)="confirmArchive()">
+        <ion-icon name="md-archive"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button *ngIf="client.Archived" icon-only (click)="confirmUnArchive()">
+        <ion-icon name="ios-undo"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+
 </ion-header>
 
 
 <ion-content padding>
 
+  <button ion-button clear float-right (click)="viewTimeline()">
+    <ion-icon name="git-compare" padding-right></ion-icon>
+    View Timeline
+  </button>
+
+  <ion-item no-lines>
+    <p item-start color="primary">Name</p>
+    <h2 item-end>{{client.ClientName}}</h2>
+  </ion-item>
+
+  <ion-item no-lines>
+    <p item-start color="primary">Client Type</p>
+    <h2 item-end>{{client.Type}}</h2>
+  </ion-item>
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Contact Person</p>
+    <h2 item-end>{{client.ContactPerson}}</h2>
+  </ion-item>
+
+  <ion-item no-lines>
+    <p item-start color="primary">PhoneNumber 1</p>
+    <h2 item-end>{{client.PhoneNumber}}</h2>
+  </ion-item>
+
+  <ion-item no-lines *ngIf="client.PhoneNumber2">
+    <p item-start color="primary">PhoneNumber 2</p>
+    <h2 item-end>{{client.PhoneNumber2}}</h2>
+  </ion-item>
+
+  <ion-item no-lines>
+    <p item-start color="primary">Expected Billing</p>
+    <h2 item-end>{{client.Total}}</h2>
+  </ion-item>
+
+
+
+
+  <ion-item no-lines *ngIf="client.Website">
+    <p item-start color="primary">Website Quote</p>
+    <h2 item-end>{{client.WebsiteQuote}}</h2>
+  </ion-item>
+
+
+  <ion-item no-lines *ngIf="client.SocialMedia">
+    <p item-start color="primary">Social Media Quote</p>
+    <h2 item-end>{{client.SocialMediaQuote}}</h2>
+  </ion-item>
+
+
+  <ion-item no-lines *ngIf="client.InHouseOrder">
+    <p item-start color="primary">In-House Order Quote</p>
+    <h2 item-end>{{client.InHouseOrderQuote}}</h2>
+  </ion-item>
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Description</p>
+  </ion-item>
+  <ion-item no-lines>
+    <h2 item-start>{{client.Description}}</h2>
+  </ion-item>
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Added On</p>
+    <h2 item-end>{{client.TimeStamp | date:'medium' }}</h2>
+  </ion-item>
+
+
+
+
+
+
+
+
+
+
+  <button ion-button (click)="delConfirm()" float-right clear color="danger">Delete Client</button>
 </ion-content>

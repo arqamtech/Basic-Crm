@@ -12,9 +12,9 @@
     <ion-slide>
 
 
-      <ion-item>
+      <ion-item class="content">
         <ion-label floating>Enter your current Password</ion-label>
-        <ion-input type="password" [(ngModel)]="cpass"></ion-input>
+        <ion-input type="password" [(ngModel)]="cpass" autofocus></ion-input>
       </ion-item>
 
       <button ion-button margin-top (click)="verifyPass()">Confirm</button>
@@ -22,12 +22,12 @@
 
     <ion-slide>
 
-      <ion-item>
+      <ion-item class="content">
         <ion-label floating>Enter new Password</ion-label>
         <ion-input type="password" [(ngModel)]="npass"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <ion-item class="content">
         <ion-label floating>Re-enter Password</ion-label>
         <ion-input type="password" [(ngModel)]="npass2"></ion-input>
       </ion-item>

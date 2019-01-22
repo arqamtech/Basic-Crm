@@ -12,7 +12,14 @@
     <ion-input type="text" [(ngModel)]="cName" autofocus></ion-input>
   </ion-item>
 
-
+  <ion-item>
+    <ion-label floating>Type of Business</ion-label>
+    <ion-select [(ngModel)]="cType">
+      <ion-option value="Restaurant">Restaurant </ion-option>
+      <ion-option value="Hospital">Hospital </ion-option>
+      <ion-option value="Other">Other </ion-option>
+    </ion-select>
+  </ion-item>
 
   <ion-item>
     <ion-label floating>Contact Person Name</ion-label>
@@ -28,6 +35,44 @@
     <ion-label floating>Phone Number 2</ion-label>
     <ion-input type="number" [(ngModel)]="cPhone2"></ion-input>
   </ion-item>
+
+
+
+  <ion-item>
+    <ion-label>Website</ion-label>
+    <ion-toggle [(ngModel)]="webC"></ion-toggle>
+  </ion-item>
+
+  <ion-item *ngIf="webC">
+    <ion-label floating>Website Quote</ion-label>
+    <ion-input type="number" [(ngModel)]="webQ"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Social Media</ion-label>
+    <ion-toggle [(ngModel)]="smC"></ion-toggle>
+  </ion-item>
+
+  <ion-item *ngIf="smC">
+    <ion-label floating>Social Media Quote</ion-label>
+    <ion-input type="number" [(ngModel)]="smQ"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>In-house Ordering</ion-label>
+    <ion-toggle [(ngModel)]="inHouseC"></ion-toggle>
+  </ion-item>
+
+  <ion-item *ngIf="smC">
+    <ion-label floating>In-house Ordering Quote</ion-label>
+    <ion-input type="number" [(ngModel)]="inHouseQ"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-textarea [(ngModel)]="desc"></ion-textarea>
+  </ion-item>
+
 
 
   <button ion-button block margin-top (click)="checkData()">Add Client</button>

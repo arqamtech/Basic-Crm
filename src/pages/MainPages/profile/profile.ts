@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController, AlertController
 import * as firebase from 'firebase';
 import { ChangePassPage } from '../../Auth/change-pass/change-pass';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { ArchivedClientsPage } from '../../Clients/archived-clients/archived-clients';
 
 
 @IonicPage()
@@ -72,4 +73,5 @@ export class ProfilePage {
       });
     }
     gtchangePass(){this.navCtrl.push(ChangePassPage);}  
+    gtArchivedClients(){this.navCtrl.push(ArchivedClientsPage);}  
 }

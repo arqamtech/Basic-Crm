@@ -1,11 +1,12 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Clients</ion-title>
+    <ion-title>Archived Clients</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
+
 
   <ion-card *ngFor="let c of clients">
 
@@ -17,7 +18,6 @@
       <a item-end href="tel:{{c.PhoneNumber}}">
         <ion-icon large name="ios-call" color="primary" item-end></ion-icon>
       </a>
-      <!-- <button item-end ion-button clear (click)="cDetails(c)">Details</button> -->
     </ion-item>
 
 
@@ -27,9 +27,6 @@
     </ion-item>
 
 
-    <!-- <ion-item>
-      <p item-start>Contact No.</p>
-    </ion-item> -->
 
 
     <ion-item>
@@ -48,9 +45,4 @@
 
 
 
-  <ion-fab bottom right>
-    <button ion-fab (click)="gtAddClient()">
-      <ion-icon name="add"></ion-icon>
-    </button>
-  </ion-fab>
 </ion-content>

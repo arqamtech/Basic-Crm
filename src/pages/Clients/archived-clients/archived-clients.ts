@@ -5,12 +5,15 @@ import * as firebase from 'firebase';
 import { AddClientPage } from '../../Clients/add-client/add-client';
 import { ClientDetailsPage } from '../../Clients/client-details/client-details';
 
+
+
+
 @IonicPage()
 @Component({
-  selector: 'page-clients',
-  templateUrl: 'clients.html',
+  selector: 'page-archived-clients',
+  templateUrl: 'archived-clients.html',
 })
-export class ClientsPage {
+export class ArchivedClientsPage {
 
   id = firebase.auth().currentUser.uid;
 
@@ -37,9 +40,9 @@ export class ClientsPage {
     });
 
     loading.present();
-    this.db.list(`AgentsData/${this.id}/Clients/`).snapshotChanges().subscribe(snap => {
+    this.db.list(`AgentsData/${this.id}/Archived Clients/`).snapshotChanges().subscribe(snap => {
+      this.clients = [];
       snap.forEach(snip => {
-        this.clients = [];
         this.db.object(`Clients/${snip.key}`).snapshotChanges().subscribe(sniip => {
           if (sniip.payload.exists()) {
 
@@ -54,6 +57,5 @@ export class ClientsPage {
   }
 
 
-  cDetails(c) { this.navCtrl.push(ClientDetailsPage, { client: c }); }
-  gtAddClient() { this.navCtrl.push(AddClientPage); }
+  cDetails(c) { c.Archived = true; this.navCtrl.push(ClientDetailsPage, { client: c }); }
 }

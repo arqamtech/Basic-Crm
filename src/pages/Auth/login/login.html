@@ -2,17 +2,18 @@
   <ion-slides>
     <ion-slide>
 
+      <img src="assets/imgs/logoFlat.png" style=" width : 40%; " />
 
-      <ion-item>
+      <ion-item class="content">
         <ion-label floating>Email</ion-label>
         <ion-input type="email" [(ngModel)]="mail" autofocus></ion-input>
       </ion-item>
 
 
-      <ion-item>
+      <ion-item class="content">
         <ion-label floating>Password</ion-label>
         <ion-input type="password" [(ngModel)]="pass"></ion-input>
-      </ion-item> 
+      </ion-item>
 
       <button ion-button margin-top (click)="checkData()">Login</button>
 

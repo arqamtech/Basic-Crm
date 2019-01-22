@@ -18,6 +18,8 @@ import { ClientDetailsPage } from '../pages/Clients/client-details/client-detail
 import { LoaderPage } from '../pages/Supp/loader/loader';
 import { LoginPage } from '../pages/Auth/login/login';
 import { ChangePassPage } from '../pages/Auth/change-pass/change-pass';
+import { ArchivedClientsPage } from '../pages/Clients/archived-clients/archived-clients';
+import { ClientTimelinePage } from '../pages/Clients/client-timeline/client-timeline';
 
 export const firebaseCred = {
     apiKey: "AIzaSyDHUozntNt51l-8V3bUPAX9cQvTvm7sv0Y",
@@ -43,6 +45,8 @@ firebase.initializeApp(firebaseCred);
         ClientDetailsPage,
         LoaderPage,
         ChangePassPage,
+        ArchivedClientsPage,
+        ClientTimelinePage,
     ],
     imports: [
         BrowserModule,
@@ -66,6 +70,9 @@ firebase.initializeApp(firebaseCred);
         ClientDetailsPage,
         LoaderPage,
         ChangePassPage,
+        ArchivedClientsPage,
+        ClientTimelinePage,
+
     ],
     providers: [
         StatusBar,
