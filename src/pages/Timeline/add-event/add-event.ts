@@ -1,27 +1,32 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import * as firebase from 'firebase';
-import { AddClientPage } from '../../Clients/add-client/add-client';
-import { ClientDetailsPage } from '../../Clients/client-details/client-details';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { e } from '@angular/core/src/render3';
+import { ThrowStmt } from '@angular/compiler';
 
 @IonicPage()
 @Component({
-  selector: 'page-clients',
-  templateUrl: 'clients.html',
+  selector: 'page-add-event',
+  templateUrl: 'add-event.html',
 })
-export class ClientsPage {
+export class AddEventPage {
 
   id = firebase.auth().currentUser.uid;
 
 
   clients: Array<any> = [];
 
+
+  selClient: string;
+  typeEvent: string;
+
   constructor(
     public navCtrl: NavController,
+    public navParams: NavParams,
+    public toastCtrl: ToastController,
     public db: AngularFireDatabase,
     public loadingCtrl: LoadingController,
-    public navParams: NavParams
   ) {
     this.getClients();
   }
@@ -29,6 +34,25 @@ export class ClientsPage {
 
 
 
+
+
+
+
+
+
+
+  checkData() {
+    if (this.selClient) {
+      if (this.typeEvent) {
+      } else { this.presentToast("Select type of Event") }
+    } else { this.presentToast("Select a Client") }
+  }
+
+  // this.addEvent();
+
+  addEvent(){
+    
+  }
 
   getClients() {
     let loading = this.loadingCtrl.create({
@@ -52,7 +76,13 @@ export class ClientsPage {
     loading.dismiss();
   }
 
-
-  cDetails(c) { this.navCtrl.push(ClientDetailsPage, { client: c }); }
-  gtAddClient() { this.navCtrl.push(AddClientPage); }
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 4000,
+      position: "top",
+      showCloseButton: false,
+    });
+    toast.present();
+  }
 }

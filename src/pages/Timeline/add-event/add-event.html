@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-item>
+    <ion-label floating>Select Client</ion-label>
+    <ion-select [(ngModel)]="selClient">
+      <ion-option *ngFor="let c of clients" [value]="c.ClientName">{{c.ClientName}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Type of Event</ion-label>
+    <ion-select [(ngModel)]="typeEvent">
+      <ion-option value="Call">Call</ion-option>
+      <ion-option value="Meeting">Meeting</ion-option>
+      <ion-option value="Call Not Answered">Call Not Answered</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label floating>Enter Current Status</ion-label>
+    <ion-input type="text" [(ngModel)]="status"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Resonse</ion-label>
+    <ion-textarea [(ngModel)]="Response"></ion-textarea>
+  </ion-item>
+
+</ion-content>

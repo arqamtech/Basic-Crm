@@ -20,6 +20,8 @@ import { LoginPage } from '../pages/Auth/login/login';
 import { ChangePassPage } from '../pages/Auth/change-pass/change-pass';
 import { ArchivedClientsPage } from '../pages/Clients/archived-clients/archived-clients';
 import { ClientTimelinePage } from '../pages/Clients/client-timeline/client-timeline';
+import { AddEventPage } from '../pages/Timeline/add-event/add-event';
+import { EventDetailsPage } from '../pages/Timeline/event-details/event-details';
 
 export const firebaseCred = {
     apiKey: "AIzaSyDHUozntNt51l-8V3bUPAX9cQvTvm7sv0Y",
@@ -47,6 +49,8 @@ firebase.initializeApp(firebaseCred);
         ChangePassPage,
         ArchivedClientsPage,
         ClientTimelinePage,
+        AddEventPage,
+        EventDetailsPage,
     ],
     imports: [
         BrowserModule,
@@ -72,6 +76,8 @@ firebase.initializeApp(firebaseCred);
         ChangePassPage,
         ArchivedClientsPage,
         ClientTimelinePage,
+        AddEventPage,
+        EventDetailsPage,
 
     ],
     providers: [

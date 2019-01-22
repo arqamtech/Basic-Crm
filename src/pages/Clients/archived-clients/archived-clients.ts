@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import * as firebase from 'firebase';
-import { AddClientPage } from '../../Clients/add-client/add-client';
 import { ClientDetailsPage } from '../../Clients/client-details/client-details';
 
 
