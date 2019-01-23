@@ -1,10 +1,53 @@
 <ion-header>
-  <ion-navbar color="primary" >
+  <ion-navbar color="primary">
     <ion-title>Event Details</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-item no-lines>
+    <p item-start color="primary">Client Name</p>
+    <h2 item-end>{{event.Client}}</h2>
+  </ion-item>
+
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Event Type</p>
+    <h2 item-end>{{event.EventType}}</h2>
+  </ion-item>
+
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Status</p>
+    <h2 item-end>{{event.Status}}</h2>
+  </ion-item>
+
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Response</p>
+    <h2 item-end>{{event.Response}}</h2>
+  </ion-item>
+
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Agent</p>
+    <h2 item-end>{{agent}}</h2>
+  </ion-item>
+
+
+  <ion-item no-lines>
+    <p item-start color="primary">Time</p>
+    <h4 item-end>{{event.TimeStamp | date :'d LLL   h:m a'}}</h4>
+  </ion-item>
+
+
+
+
 
 </ion-content>

@@ -22,6 +22,8 @@ export class ProfilePage {
   id = firebase.auth().currentUser.uid;
   userName : string;
   userMail : string;
+  userProPic : string;
+
   constructor(
   public navCtrl: NavController, 
   public loadingCtrl : LoadingController,
@@ -37,6 +39,7 @@ export class ProfilePage {
       let temp  :any = snap.payload.val();
       this.userName = temp.Name;
       this.userMail = temp.Email;
+      this.userProPic = temp.ProPic;
       
     })
   }

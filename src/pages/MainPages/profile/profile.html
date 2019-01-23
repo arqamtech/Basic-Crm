@@ -12,19 +12,29 @@
 
 <ion-content>
 
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-row>
       <ion-col col-4>
-
+        <ion-avatar item-start>
+          <img [src]="userProPic">
+        </ion-avatar>
       </ion-col>
-      <ion-col col-8 class="content">
+      <ion-col padding-left col-8 class="content">
         <ion-card-title>{{userName}}</ion-card-title>
         <p>{{userMail}}</p>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
-
+  <ion-item padding-bottom no-lines>
+    <ion-avatar item-start>
+      <img [src]="userProPic" >
+    </ion-avatar>
+    <div text-right item-end>
+      <h2>{{userName}}</h2>
+      <p>{{userMail}}</p>
+    </div>
+  </ion-item>
 
 
   <ion-item (click)="gtArchivedClients()">

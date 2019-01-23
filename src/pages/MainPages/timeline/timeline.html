@@ -7,8 +7,27 @@
 
 <ion-content padding>
 
+  <!-- 
+  <div *ngFor="let e of events" >
+      <ion-card-title>{{e.Client}}</ion-card-title>
+      <p>{{e.TimeStamp | date :'medium'}}</p>
+  </div> -->
 
 
+  <ul>
+    <li *ngFor="let e of events" (click)="eDetails(e)">
+      <div class="bullet"></div>
+      <div class="desc">
+        <h3>{{e.Client}}</h3>
+        <h4>{{e.EventType}}</h4>
+        <h4>{{e.Response}}</h4>
+        <h4>{{e.TimeStamp | date :'d LLL   h:m a'}}</h4>
+      </div>
+      <div margin-left>
+        <ion-icon color="primary" padding-left name="ios-arrow-forward"></ion-icon>
+      </div>
+    </li>
+  </ul>
 
 
 
