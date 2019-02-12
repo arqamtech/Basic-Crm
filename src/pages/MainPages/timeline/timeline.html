@@ -14,7 +14,17 @@
   </div> -->
 
 
-  <ul>
+  <ion-card *ngFor="let e of events" (click)="eDetails(e)">
+    <ion-card-content>
+      <ion-card-title>{{e.Client}}</ion-card-title>
+      <p>{{e.EventType}}</p>
+      <p>{{e.Response}}</p>
+      <p>{{e.TimeStamp | date :'d LLL   h:m a'}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- <ul>
     <li *ngFor="let e of events" (click)="eDetails(e)">
       <div class="bullet"></div>
       <div class="desc">
@@ -27,7 +37,7 @@
         <ion-icon color="primary" padding-left name="ios-arrow-forward"></ion-icon>
       </div>
     </li>
-  </ul>
+  </ul> -->
 
 
 
