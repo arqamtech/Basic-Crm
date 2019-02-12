@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { EventDetailsPage } from '../../Timeline/event-details/event-details';
+import { AddEventPage } from '../../Timeline/add-event/add-event';
+import { AddEventClientTimelinePage } from '../add-event-client-timeline/add-event-client-timeline';
 
 
 @IonicPage()
@@ -61,5 +63,6 @@ export class ClientTimelinePage {
 
 
   eDetails(e) { this.navCtrl.push(EventDetailsPage, { event: e }); }
+  gtAddEvent() { this.navCtrl.push(AddEventClientTimelinePage, { client: this.client }); }
 
 }

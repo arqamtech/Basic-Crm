@@ -16,6 +16,7 @@ export class ClientsPage {
 
 
   clients: Array<any> = [];
+  clientsLoaded: Array<any> = [];
 
   constructor(
     public navCtrl: NavController,
@@ -36,19 +37,24 @@ export class ClientsPage {
     });
 
     loading.present();
+    let tempA: Array<any> = [];
     this.db.list(`AgentsData/${this.id}/Clients/`).snapshotChanges().subscribe(snap => {
-      this.clients = [];
       snap.forEach(snip => {
+
         this.db.object(`Clients/${snip.key}`).snapshotChanges().subscribe(sniip => {
           if (sniip.payload.exists()) {
 
             let temp: any = sniip.payload.val();
             temp.key = sniip.key;
-            this.clients.push(temp);
+            tempA.push(temp);
           }
         })
+
       })
     })
+    this.clients = tempA;
+    this.clientsLoaded = tempA;
+
     loading.dismiss();
   }
 

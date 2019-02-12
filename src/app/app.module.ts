@@ -22,6 +22,8 @@ import { ArchivedClientsPage } from '../pages/Clients/archived-clients/archived-
 import { ClientTimelinePage } from '../pages/Clients/client-timeline/client-timeline';
 import { AddEventPage } from '../pages/Timeline/add-event/add-event';
 import { EventDetailsPage } from '../pages/Timeline/event-details/event-details';
+import { AddEventClientTimelinePage } from '../pages/Clients/add-event-client-timeline/add-event-client-timeline';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 export const firebaseCred = {
     apiKey: "AIzaSyDHUozntNt51l-8V3bUPAX9cQvTvm7sv0Y",
@@ -51,6 +53,7 @@ firebase.initializeApp(firebaseCred);
         ClientTimelinePage,
         AddEventPage,
         EventDetailsPage,
+        AddEventClientTimelinePage,
     ],
     imports: [
         BrowserModule,
@@ -78,11 +81,12 @@ firebase.initializeApp(firebaseCred);
         ClientTimelinePage,
         AddEventPage,
         EventDetailsPage,
-
+        AddEventClientTimelinePage,
     ],
     providers: [
         StatusBar,
         SplashScreen,
+        DatePicker,
         { provide: ErrorHandler, useClass: IonicErrorHandler }
     ]
 })

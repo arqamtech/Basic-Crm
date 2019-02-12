@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{client.ClientName}} Event</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+  <ion-item class="content">
+    <ion-label floating>Type of Event</ion-label>
+    <ion-select [(ngModel)]="typeEvent">
+      <ion-option *ngFor="let e of events" [value]="e">{{e}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item class="content">
+    <ion-label floating>Enter Updated Status</ion-label>
+    <ion-input type="text" [(ngModel)]="status"></ion-input>
+  </ion-item>
+
+  <ion-item class="content">
+    <ion-label floating>Response</ion-label>
+    <ion-textarea [(ngModel)]="Response"></ion-textarea>
+  </ion-item>
+
+  <button ion-button margin-top (click)="checkData()">Add Event</button>
+</ion-content>
